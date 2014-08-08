@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Sample App|About</title>
-	</head>
-	<body>
-		<h1>About</h1>
-		<p> This is the third view file.</p>
-	</body>
-<html>
+<% provide(:title, 'About')%>
+
+<title>Sample App|<%= yield(:title)%></title>
+<h1>About</h1>
+<p> This is the third view file.</p>
