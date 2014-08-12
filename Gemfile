@@ -14,6 +14,11 @@ end
 group :test do
 	gem 'selenium-webdriver', '2.35.1'
 	gem 'capybara', '2.1.0'
+	gem 'guard-rspec', '2.5.0'
+
+	gem 'spork-rails', '4.0.0'
+	gem 'guard-spork', '1.5.0'
+	gem 'childprocess', '0.3.6'
 end
 
 # Use SCSS for stylesheets
@@ -41,4 +46,10 @@ end
 
 group :production do	
 	gem 'rails_12factor', '0.0.2'
+end
+
+#the following code is added to avoid polling for changes
+require 'rbconfig'
+if RbConfig::CONFIG['target_os'] =~ /mswin | mingw | cygwin /i
+	gem 'wdm', '>=0.1.0'
 end
